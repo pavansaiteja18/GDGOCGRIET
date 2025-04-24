@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+@keyframes rainbowFlow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}

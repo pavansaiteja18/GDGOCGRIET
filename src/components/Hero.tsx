@@ -11,7 +11,7 @@ const Hero = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % techTerms.length);
       setFadeKey((prevKey) => prevKey + 1); // force reanimation
-    }, 2000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -23,7 +23,7 @@ const Hero = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col items-start space-y-8">
-          <h1 className="text-6xl font-bold">
+        <h1 className="text-6xl font-bold relative inline-block">
             <span className="text-blue-500">G</span>
             <span className="text-blue-500">D</span>
             <span className="text-blue-500">G</span>
@@ -34,7 +34,11 @@ const Hero = () => {
             <span className="text-green-500">I</span>
             <span className="text-green-500">E</span>
             <span className="text-green-500">T</span>
-          </h1>
+
+  {/* Rainbow underline */}
+  <div className="absolute -bottom-2 left-0 w-full h-1 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 via-blue-500 via-indigo-500 to-purple-600 animate-pulse" />
+</h1>
+
 
           <h2 className="text-xl text-gray-700 flex gap-1 items-center h-8">
             Empowering students through{" "}
