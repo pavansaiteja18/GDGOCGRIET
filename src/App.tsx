@@ -10,6 +10,7 @@ import Departments from "./pages/Departments";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+// import SnowfallEffect from "@/components/ui/SnowfallEffect"; // ✅ Import it here
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Sonner />
+      {/* <SnowfallEffect /> ✅ Add it here once for the whole app */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
