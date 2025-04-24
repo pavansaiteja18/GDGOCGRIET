@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import EventsSection from "@/components/EventsSection";
-import SnowfallEffect from "@/components/ui/SnowfallEffect"; // Make sure this path is correct
+import SnowfallEffect from "@/components/ui/SnowfallEffect"; // Ensure the path is correct
 
 const Index = () => {
   return (
@@ -9,14 +9,14 @@ const Index = () => {
       <SnowfallEffect />
 
       <Navbar />
-      <main>
+      <main className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-8">
             <div className="flex flex-col lg:flex-row gap-12">
               <div className="flex-1">
                 <Hero />
               </div>
-              <div className="lg:w-96 flex items-start justify-center ml-500">
+              <div className="lg:w-96 flex items-start justify-center">
                 <EventsSection />
               </div>
             </div>
