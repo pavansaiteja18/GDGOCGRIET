@@ -23,39 +23,36 @@ const Hero = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col items-start space-y-8">
-        <h1 className="text-6xl font-bold relative inline-block">
-  {"GDGOC".split("").map((char, index) => (
-    <span
-      key={index}
-      className={`inline-block animate-title-pop`}
-      style={{
-        animationDelay: `${index * 0.1}s`,
-        color: "#3B82F6", // Tailwind's blue-500 for GDGOC
-      }}
-    >
-      {char}
-    </span>
-  ))}
-  {/* Add space between GDGOC and GRIET */}
-  <span className="inline-block"></span> {/* Adjust this value for more or less space */}
+          <h1 className="text-7xl font-extrabold font-sans relative inline-block">
+            {"GDGOC".split("").map((char, index) => (
+              <span
+                key={index}
+                className={`inline-block animate-title-pop`}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  color: "#3B82F6", // Tailwind's blue-500 for GDGOC
+                }}
+              >
+                {char}
+              </span>
+            ))}
+            {/* Add space between GDGOC and GRIET */}
+            <span className="inline-block"></span> {/* Adjust this value for more or less space */}
 
-  {"GRIET".split("").map((char, index) => (
-    <span
-      key={index}
-      className={`inline-block animate-title-pop`}
-      style={{
-        animationDelay: `${(index + 5) * 0.1}s`, // Adjust animation delay to continue after GDGOC
-        color: "#10B981", // Tailwind's green-500 for GRIET
-      }}
-    >
-      {char}
-    </span>
-  ))}
-  <div className="absolute -bottom-2 left-0 w-full h-1 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 via-blue-500 via-indigo-500 to-purple-600 animate-pulse" />
-</h1>
-
-
-
+            {"GRIET".split("").map((char, index) => (
+              <span
+                key={index}
+                className={`inline-block animate-title-pop`}
+                style={{
+                  animationDelay: `${(index + 5) * 0.1}s`, // Adjust animation delay to continue after GDGOC
+                  color: "#10B981", // Tailwind's green-500 for GRIET
+                }}
+              >
+                {char}
+              </span>
+            ))}
+            <div className="absolute -bottom-2 left-0 w-full h-1 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 via-blue-500 via-indigo-500 to-purple-600 animate-pulse" />
+          </h1>
 
           <h2 className="text-xl text-gray-700 flex gap-1 items-center h-8">
             Empowering students through{" "}
@@ -73,7 +70,7 @@ const Hero = () => {
               <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
                 <span className="text-white text-sm">💡</span>
               </div>
-              <h3 className="text-xl font-medium text-blue-600">What We Offer</h3>
+              <h3 className="text-xl font-medium text-blue-600">Explore Our Impactful Programs</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
