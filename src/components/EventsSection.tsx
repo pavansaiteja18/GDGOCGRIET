@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const EventsSection = () => {
   const [activeTab, setActiveTab] = useState("upcoming");
@@ -59,8 +60,25 @@ const EventsSection = () => {
             />
           </>
         ) : (
-          <div className="text-center text-gray-500 py-8">
-            No past events to show
+          <div className="space-y-4">
+            <PastEventCard
+              title="Build with AI"
+              type="Speaker Session / Tech Talk"
+              date="7 Feb 2025"
+              location="Gokaraju Rangaraju Institute of Engineering & Technology - Hyderabad, India"
+            />
+            <PastEventCard
+              title="Build with AI"
+              type="Info session"
+              date="11 Oct 2024"
+              location="Gokaraju Rangaraju Institute of Engineering & Technology - Hyderabad, India"
+            />
+            <PastEventCard
+              title="GDGoC Orientation"
+              type="Info session"
+              date="26 Sept 2024"
+              location="Gokaraju Rangaraju Institute of Engineering & Technology - Hyderabad, India"
+            />
           </div>
         )}
       </div>
@@ -79,8 +97,10 @@ interface EventCardProps {
 
 const EventCard = ({ title, date, location, attendees, isNew, registrationLink }: EventCardProps) => {
   return (
-    <div className="bg-white rounded-lg border p-4 relative">
-      {/* "New" Badge */}
+    <motion.div
+      className="bg-white rounded-lg border p-4 relative shadow transition-all hover:shadow-xl"
+      whileHover={{ scale: 1.05 }}
+    >
       {isNew && (
         <div className="absolute right-2 top-2 bg-blue-500 text-white text-xs px-2 py-0.5 rounded">
           New
@@ -114,7 +134,36 @@ const EventCard = ({ title, date, location, attendees, isNew, registrationLink }
       >
         Register Now
       </a>
-    </div>
+    </motion.div>
+  );
+};
+
+interface PastEventCardProps {
+  title: string;
+  type: string;
+  date: string;
+  location: string;
+}
+
+const PastEventCard = ({ title, type, date, location }: PastEventCardProps) => {
+  return (
+    <motion.div
+      className="bg-white border-2 border-green-600 rounded-lg p-4 shadow-sm transition-all hover:scale-105"
+      whileHover={{ scale: 1.05 }}
+    >
+      <h3 className="font-semibold text-lg mb-1 text-green-700">{title}</h3>
+      <p className="text-sm text-gray-500 mb-2 italic">{type}</p>
+      <div className="text-sm text-gray-600 space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">📅</span>
+          <span>{date}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-red-500">📍</span>
+          <span>{location}</span>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
