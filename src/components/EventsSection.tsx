@@ -43,18 +43,19 @@ const EventsSection = () => {
         {activeTab === "upcoming" ? (
           <>
             <EventCard
+              title="API Ideathon"
+              date="26/04/2025"
+              location="Griet College"
+              attendees="200+ Attendees"
+              isNew={true}
+              registrationLink="https://docs.google.com/forms/d/e/1FAIpQLSftYyaj8HpzMhwTL0MvfRv48OT3Ak0iAJ64PN7J8z9WHO6FmA/viewform"
+            />
+            <EventCard
               title="Google-Powered Solution Challenge 2025"
               date="6th Jan - 2nd week of July"
               location="Online"
               attendees="200+ Attendees"
-              isNew={true} // This event will show the "New" badge
-            />
-
-            <EventCard
-              title="Not Available"
-              date="N/A"
-              location="N/A"
-              attendees="N/A Attendees"
+              registrationLink="https://example.com/solution-challenge"
             />
           </>
         ) : (
@@ -73,9 +74,10 @@ interface EventCardProps {
   location: string;
   attendees: string;
   isNew?: boolean;
+  registrationLink: string;
 }
 
-const EventCard = ({ title, date, location, attendees, isNew }: EventCardProps) => {
+const EventCard = ({ title, date, location, attendees, isNew, registrationLink }: EventCardProps) => {
   return (
     <div className="bg-white rounded-lg border p-4 relative">
       {/* "New" Badge */}
@@ -104,9 +106,14 @@ const EventCard = ({ title, date, location, attendees, isNew }: EventCardProps) 
         </div>
       </div>
 
-      <button className="w-full py-2 mt-4 text-center text-white font-medium rounded bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 transition-all">
+      <a
+        href={registrationLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full py-2 mt-4 text-center text-white font-medium rounded bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 transition-all"
+      >
         Register Now
-      </button>
+      </a>
     </div>
   );
 };
