@@ -1,11 +1,14 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import EventsSection from "@/components/EventsSection";
+import SnowfallEffect from "@/components/ui/SnowfallEffect"; // Import SnowfallEffect
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
+      {/* Snowfall effect */}
+      <SnowfallEffect />
+
       <Navbar />
       
       <main>
